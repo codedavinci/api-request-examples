@@ -2,7 +2,7 @@ var http = require('http');
 var data = require('./data/inventory');
 
 
-//
+//  Native modules --http
 //  Best practices to create an api with multiple routes
 //  providing data to clients.
 
@@ -23,7 +23,6 @@ http.createServer(function(req, res){
     
 
 }).listen(3000);
-
 
 
 console.log("Server listening on port 3000");
