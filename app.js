@@ -1,6 +1,22 @@
 var express = require("express");
-
+var cors = require("cors");
 var app = express();
+
+var kratosTerms = [
+    {
+      term: "Money",
+      defined: "To make it rain" 
+    },
+    {
+      term: "Cars",
+      defined: "We used them to make life easier"
+    },
+    {
+        term: "Credit",
+        defined: "Save our life when we don't have money"
+    }
+    
+];
 
 app.use(function(req, res, next) {
    
@@ -11,6 +27,12 @@ app.use(function(req, res, next) {
 
 
 app.use(express.static("./public"));
+
+app.use(cors());
+
+app.get("/dictionary-api", function(req, res){
+   res.json(kratosTerms); 
+});
 
 app.listen(3000);
 
